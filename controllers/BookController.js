@@ -4,7 +4,9 @@ export const createBook = async (req, res) => {
   const book = new Book({ ...req.body, author: req.params.authorId });
   await book.save();
   res.status(201).json(book);
-};
+}; 
+
+
 export const newBookCollection = async (req, res) => {
   const books = await Book.aggregate([
     {
